@@ -1,0 +1,15 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit"
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.rulers": [100],
+	"files.eol": "\n",
+	"terminal.integrated.enablePersistentSessions": false,
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"[markdown]": {
+		"editor.wordWrap": "on"
+	}
+}

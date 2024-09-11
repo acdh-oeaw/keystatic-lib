@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build output
+dist/
+
+# logs
+*.log
+
+# caches
+.eslintcache
+.prettiercache
+*.tsbuildinfo
+
+# misc
+.DS_Store

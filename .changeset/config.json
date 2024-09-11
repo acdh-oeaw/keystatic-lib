@@ -1,0 +1,8 @@
+{
+	"$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
+	"access": "public",
+	"baseBranch": "main",
+	"changelog": ["@changesets/changelog-github", { "repo": "acdh-oeaw/keystatic-lib" }],
+	"commit": false,
+	"updateInternalDependencies": "patch"
+}
