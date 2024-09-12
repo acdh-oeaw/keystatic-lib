@@ -16,7 +16,7 @@ provide the languages supported in your project via typescript module augmentati
 // ./types/keystatic.d.ts
 
 declare module "@acdh-oeaw/keystatic-lib" {
-	export interface Config {
+	export interface KeystaticConfig {
 		locales: "de" | "en";
 	}
 }
