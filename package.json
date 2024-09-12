@@ -17,7 +17,7 @@
 	},
 	"packageManager": "pnpm@9.10.0",
 	"scripts": {
-		"build": "tsup",
+		"build": "tsup ./src/index.ts",
 		"changeset:add": "changeset add",
 		"changeset:status": "changeset status --verbose",
 		"ci:release": "changeset publish",
@@ -29,7 +29,7 @@
 		"prepare": "run-s setup",
 		"prepublishOnly": "run-s validate build",
 		"setup": "is-ci || simple-git-hooks",
-		"test": "tsx uvu",
+		"test": "tsx --test --test-reporter spec",
 		"types:check": "tsc --noEmit",
 		"validate": "run-p format:check lint:check types:check test"
 	},
@@ -61,8 +61,7 @@
 		"simple-git-hooks": "^2.11.1",
 		"tsup": "^8.2.4",
 		"tsx": "^4.19.0",
-		"typescript": "^5.6.2",
-		"uvu": "^0.5.6"
+		"typescript": "^5.6.2"
 	},
 	"pnpm": {
 		"overrides": {
