@@ -122,17 +122,60 @@ export default config({
 
 ### read and render entries
 
-in astro:
+create resource readers by passing the keystatic config and a mdx compiler function to
+`createReaders`:
+
+```ts
+// ./lib/keystatic/readers.ts
+
+import { createReaders } from "@acdh-oeaw/keystatic-lib";
+import { createFormatAwareProcessors } from "@mdx-js/mdx/internal-create-format-aware-processors";
+
+import config from "../../keystatic.config.tsx";
+
+function getMdxContent(code: string, locale: Locale, baseUrl: URL) {
+	const processor = await createFormatAwareProcessors({
+		/** Set this to `html` in astro. */
+		// elementAttributeNameCase: "html",
+		format: "mdx",
+		outputFormat: "function-body",
+		providerImportSource: "#",
+		/** ... */
+	});
+	const file = await processor.process(code);
+	return run(file, { ...runtime, baseUrl, useMDXComponents });
+}
+
+function useMDXComponents() {
+	/** Provide component mappings, which should be available to all mdx content. */
+	return {
+		// a: LocaleLink,
+		// Video,
+	};
+}
+
+const { createCollectionResource, createSingletonResource } = createReaders(config, getMdxContent);
+
+export { createCollectionResource, createSingletonResource };
+```
+
+a reader has methods for reading a single resource entry (`read`), reading all resource entries
+(`all`), and returning a list of entry identifiers (`list`).
+
+a resource entry returns `id`, `collection`/`singleton`, and `data`, as well as a `compile` method,
+which can be used to transform rich-text field content to a jsx component.
+
+#### astro
 
 ```astro
 ---
 // ./src/pages/[locale]/[id].astro
 
-import { createCollectionResource } from "@acdh-ch/keystatic-lib";
 import type { GetStaticPathsResult } from "astro";
 
 import { locales } from "@/config/i18n.config";
 import Layout from "@/layouts/page-layout.astro";
+import { createCollectionResource } from "@/lib/keystatic/readers";
 
 export async function getStaticPaths() {
 	return (
@@ -161,14 +204,13 @@ const { default: Content } = await page.compile(content);
 </Layout>
 ```
 
-in next.js:
+#### next.js
 
 ```tsx
 // ./app/[locale]/[id]/page.tsx
 
-import { createCollectionResource } from "@acdh-ch/keystatic-lib";
-
 import type { Locale } from "@/config/i18n.config";
+import { createCollectionResource } from "@/lib/keystatic/readers";
 
 interface PageProps {
 	params: {
