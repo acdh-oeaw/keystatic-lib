@@ -128,10 +128,10 @@ create resource readers by passing the keystatic config and a mdx compiler funct
 ```ts
 // ./lib/keystatic/readers.ts
 
-import { createReaders } from "@acdh-oeaw/keystatic-lib";
+import { createReaders } from "@acdh-oeaw/keystatic-lib/reader";
 import { createFormatAwareProcessors } from "@mdx-js/mdx/internal-create-format-aware-processors";
 
-import config from "../../keystatic.config.tsx";
+import config from "../../keystatic.config";
 
 function getMdxContent(code: string, locale: Locale, baseUrl: URL) {
 	const processor = await createFormatAwareProcessors({

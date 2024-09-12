@@ -3,9 +3,9 @@
 	"version": "0.1.1",
 	"license": "MIT",
 	"type": "module",
-	"main": "./dist/index.js",
 	"exports": {
-		".": "./dist/index.js"
+		".": "./dist/index.js",
+		"./reader": "./dist/reader.js"
 	},
 	"files": [
 		"dist"
@@ -17,7 +17,7 @@
 	},
 	"packageManager": "pnpm@9.10.0",
 	"scripts": {
-		"build": "tsup ./src/index.ts",
+		"build": "tsup",
 		"changeset:add": "changeset add",
 		"changeset:status": "changeset status --verbose",
 		"ci:release": "changeset publish",
