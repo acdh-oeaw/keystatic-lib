@@ -29,12 +29,13 @@
 		"prepare": "run-s setup",
 		"prepublishOnly": "run-s validate build",
 		"setup": "is-ci || simple-git-hooks",
-		"test": "NODE_OPTIONS=\"--import tsx\" uvu",
+		"test": "tsx uvu",
 		"types:check": "tsc --noEmit",
 		"validate": "run-p format:check lint:check types:check test"
 	},
 	"dependencies": {
-		"@sindresorhus/slugify": "^2.2.1"
+		"@sindresorhus/slugify": "^2.2.1",
+		"@types/mdx": "^2.0.13"
 	},
 	"peerDependencies": {
 		"@keystatic/core": "0.x"

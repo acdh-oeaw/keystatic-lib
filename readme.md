@@ -119,3 +119,85 @@ export default config({
 	},
 });
 ```
+
+### read and render entries
+
+in astro:
+
+```astro
+---
+// ./src/pages/[locale]/[id].astro
+
+import { createCollectionResource } from "@acdh-ch/keystatic-lib";
+import type { GetStaticPathsResult } from "astro";
+
+import { locales } from "@/config/i18n.config";
+import Layout from "@/layouts/page-layout.astro";
+
+export async function getStaticPaths() {
+	return (
+		await Promise.all(
+			locales.map(async (locale) => {
+				const ids = await createCollectionResource("pages", locale).list();
+				return ids.map((id) => {
+					return { params: { id, locale } };
+				});
+			}),
+		)
+	).flat() satisfies GetStaticPathsResult;
+}
+
+const { id, locale } = Astro.params;
+
+const page = await createCollectionResource("pages", locale).read(id);
+const { content, image, title } = page.data;
+const { default: Content } = await page.compile(content);
+---
+
+<Layout>
+	<main>
+		<Content />
+	</main>
+</Layout>
+```
+
+in next.js:
+
+```tsx
+// ./app/[locale]/[id]/page.tsx
+
+import { createCollectionResource } from "@acdh-ch/keystatic-lib";
+
+import type { Locale } from "@/config/i18n.config";
+
+interface PageProps {
+	params: {
+		id: string;
+		locale: Locale;
+	};
+}
+
+export const dynamicParams = false;
+
+export async function generateStaticParams(props: PageProps) {
+	const { locale } = props.params;
+	const ids = await createCollectionResource("pages", locale).list();
+	return ids.map((id) => {
+		return { id };
+	});
+}
+
+export default async function Page(props: PageProps) {
+	const { id, locale } = props.params;
+
+	const page = await createCollectionResource("pages", locale).read(id);
+	const { title, image, content } = page.data;
+	const { default: Content } = await page.compile(content);
+
+	return (
+		<main>
+			<Content />
+		</main>
+	);
+}
+```

@@ -5,6 +5,8 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
 	"editor.rulers": [100],
+	"eslint.enable": true,
+	"eslint.validate": ["javascript", "typescript"],
 	"files.eol": "\n",
 	"terminal.integrated.enablePersistentSessions": false,
 	"typescript.enablePromptUseWorkspaceTsdk": true,
