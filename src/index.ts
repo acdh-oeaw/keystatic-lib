@@ -46,10 +46,12 @@ export function createContentFieldOptions<TPath extends `/${string}/`>(assetPath
 	};
 }
 
-export function createComponent<TPath extends `/${string}/`, TComponent extends ContentComponent>(
-	createComponentFactory: (assetPath: TPath, locale: Locale) => TComponent,
-) {
-	return function createComponent(assetPath: TPath, locale: Locale) {
+export function createComponent<
+	TPath extends `/${string}/`,
+	TLocale extends Locale,
+	TComponent extends ContentComponent,
+>(createComponentFactory: (assetPath: TPath, locale: TLocale) => TComponent) {
+	return function createComponent(assetPath: TPath, locale: TLocale) {
 		return createComponentFactory(assetPath, locale);
 	};
 }
@@ -70,16 +72,17 @@ export function createSingletonPaths<TPath extends `/${string}/`>(path: TPath, l
 
 export function createCollection<
 	TPath extends `/${string}/`,
+	TLocale extends Locale,
 	TSchema extends Record<string, ComponentSchema>,
 	TSlugField extends string,
 >(
 	path: TPath,
 	createLocalisedCollectionFactory: (
 		paths: ReturnType<typeof createCollectionPaths<TPath>>,
-		locale: Locale,
+		locale: TLocale,
 	) => Collection<TSchema, TSlugField>,
 ) {
-	return function createLocalisedCollection(locale: Locale) {
+	return function createLocalisedCollection(locale: TLocale) {
 		const paths = createCollectionPaths(path, locale);
 		return createLocalisedCollectionFactory(paths, locale);
 	};
@@ -87,25 +90,32 @@ export function createCollection<
 
 export function createSingleton<
 	TPath extends `/${string}/`,
-	Schema extends Record<string, ComponentSchema>,
+	TLocale extends Locale,
+	TSchema extends Record<string, ComponentSchema>,
 >(
 	path: TPath,
 	createLocalisedSingletonFactory: (
 		paths: ReturnType<typeof createSingletonPaths<TPath>>,
-		locale: Locale,
-	) => Singleton<Schema>,
+		locale: TLocale,
+	) => Singleton<TSchema>,
 ) {
-	return function createLocalisedSingleton(locale: Locale) {
+	return function createLocalisedSingleton(locale: TLocale) {
 		const paths = createSingletonPaths(path, locale);
 		return createLocalisedSingletonFactory(paths, locale);
 	};
 }
 
-export function withI18nPrefix<TLabel extends string>(label: TLabel, locale: Locale) {
+export function withI18nPrefix<TLabel extends string, TLocale extends Locale>(
+	label: TLabel,
+	locale: TLocale,
+) {
 	return `${locale}:${label}` as const;
 }
 
-export type WithoutI18nPrefix<T extends string> = T extends `${Locale}:${infer U}` ? U : T;
+export type WithoutI18nPrefix<
+	T extends string,
+	TLocale extends Locale,
+> = T extends `${TLocale}:${infer U}` ? U : T;
 
 export function createReader<
 	TCollections extends Record<string, Collection<Record<string, ComponentSchema>, string>>,
@@ -131,15 +141,15 @@ export function createReader<
 export function createReaders<
 	TCollections extends Record<string, Collection<Record<string, ComponentSchema>, string>>,
 	TSingletons extends Record<string, Singleton<Record<string, ComponentSchema>>>,
+	TLocale extends Locale,
 	TMdxContent extends MDXModule,
 >(
 	config: Config<TCollections, TSingletons>,
-	getMdxContent: (code: string, locale: Locale, baseUrl: URL) => Promise<TMdxContent>,
+	getMdxContent: (code: string, locale: TLocale, baseUrl: URL) => Promise<TMdxContent>,
 ) {
-	function createCollectionResource<TKeys extends WithoutI18nPrefix<keyof TCollections & string>>(
-		name: TKeys,
-		locale: Locale,
-	) {
+	function createCollectionResource<
+		TKeys extends WithoutI18nPrefix<keyof TCollections & string, TLocale>,
+	>(name: TKeys, locale: TLocale) {
 		const reader = createReader(config);
 		const collectionName = withI18nPrefix(name, locale);
 
@@ -188,10 +198,9 @@ export function createReaders<
 		};
 	}
 
-	function createSingletonResource<TKeys extends WithoutI18nPrefix<keyof TSingletons & string>>(
-		name: TKeys,
-		locale: Locale,
-	) {
+	function createSingletonResource<
+		TKeys extends WithoutI18nPrefix<keyof TSingletons & string, TLocale>,
+	>(name: TKeys, locale: TLocale) {
 		const reader = createReader(config);
 		const i18nName = withI18nPrefix(name, locale);
 
