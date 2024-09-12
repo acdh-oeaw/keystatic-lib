@@ -1,5 +1,12 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.1.1
+
+### Patch Changes
+
+- [`ae63f22`](https://github.com/acdh-oeaw/keystatic-lib/commit/ae63f22c3e0cb797e5bcc9a4e7d31d5403fe764d)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - pass locale type through generics
+
 ## 0.1.0
 
 ### Minor Changes
