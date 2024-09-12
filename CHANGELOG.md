@@ -1,5 +1,13 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.1.2
+
+### Patch Changes
+
+- [`a1ead33`](https://github.com/acdh-oeaw/keystatic-lib/commit/a1ead3351c79dc3936303e31d74d6fa2e799145e)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - add separate entrypoint for node-only
+  reader
+
 ## 0.1.1
 
 ### Patch Changes
