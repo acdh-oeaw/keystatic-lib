@@ -1,5 +1,13 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.2.0
+
+### Minor Changes
+
+- [`701623c`](https://github.com/acdh-oeaw/keystatic-lib/commit/701623c0ef049a400b75b1fc797fe252b4ce155b)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - add use-object-url hook for cms
+  previews
+
 ## 0.1.2
 
 ### Patch Changes
