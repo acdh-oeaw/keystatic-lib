@@ -45,11 +45,11 @@
 		"@acdh-oeaw/eslint-config": "^2.0.1",
 		"@acdh-oeaw/eslint-config-node": "^2.0.1",
 		"@acdh-oeaw/prettier-config": "^2.0.0",
-		"@acdh-oeaw/tsconfig-lib": "^1.1.0",
+		"@acdh-oeaw/tsconfig-lib": "^1.1.1",
 		"@changesets/changelog-github": "^0.5.0",
 		"@changesets/cli": "^2.27.8",
 		"@commitlint/cli": "^19.5.0",
-		"@keystatic/core": "^0.5.34",
+		"@keystatic/core": "^0.5.35",
 		"@types/node": "^22.5.4",
 		"eslint": "^9.10.0",
 		"eslint-config-flat-gitignore": "^0.3.0",
@@ -60,7 +60,7 @@
 		"prettier": "^3.3.3",
 		"simple-git-hooks": "^2.11.1",
 		"tsup": "^8.2.4",
-		"tsx": "^4.19.0",
+		"tsx": "^4.19.1",
 		"typescript": "^5.6.2"
 	},
 	"commitlint": {

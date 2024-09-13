@@ -28,8 +28,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(prettier@3.3.3)
       '@acdh-oeaw/tsconfig-lib':
-        specifier: ^1.1.0
-        version: 1.1.0(typescript@5.6.2)
+        specifier: ^1.1.1
+        version: 1.1.1(typescript@5.6.2)
       '@changesets/changelog-github':
         specifier: ^0.5.0
         version: 0.5.0
@@ -40,7 +40,7 @@ importers:
         specifier: ^19.5.0
         version: 19.5.0(@types/node@22.5.4)(typescript@5.6.2)
       '@keystatic/core':
-        specifier: ^0.5.34
+        specifier: ^0.5.35
         version: 0.5.35(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/node':
         specifier: ^22.5.4
@@ -73,7 +73,7 @@ importers:
         specifier: ^8.2.4
         version: 8.2.4(jiti@1.21.6)(tsx@4.19.1)(typescript@5.6.2)(yaml@2.5.1)
       tsx:
-        specifier: ^4.19.0
+        specifier: ^4.19.1
         version: 4.19.1
       typescript:
         specifier: ^5.6.2
@@ -113,8 +113,8 @@ packages:
     peerDependencies:
       prettier: 3.x
 
-  '@acdh-oeaw/tsconfig-lib@1.1.0':
-    resolution: {integrity: sha512-rjaI/ERNpAom6GxUorWa2eFEDKkBqt0M61YJcKy2gh253hpEbnNqXH8VzWwRxvLJHwhipoz22ZI5eIagRtpOPg==}
+  '@acdh-oeaw/tsconfig-lib@1.1.1':
+    resolution: {integrity: sha512-PvCo8YUHDNgz+ecoUH73h4XhDaDC6blq/btie87RcshaEH4hus+zo3jM1c5z+TnFUtYWpzzsYSHu1eveXMGDDw==}
     peerDependencies:
       typescript: '>=5.6'
 
@@ -3387,7 +3387,7 @@ snapshots:
     dependencies:
       prettier: 3.3.3
 
-  '@acdh-oeaw/tsconfig-lib@1.1.0(typescript@5.6.2)':
+  '@acdh-oeaw/tsconfig-lib@1.1.1(typescript@5.6.2)':
     dependencies:
       typescript: 5.6.2
 
