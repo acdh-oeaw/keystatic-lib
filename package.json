@@ -5,6 +5,7 @@
 	"type": "module",
 	"exports": {
 		".": "./dist/index.js",
+		"./preview": "./dist/preview/index.js",
 		"./reader": "./dist/reader.js"
 	},
 	"files": [
@@ -44,6 +45,7 @@
 		"@acdh-oeaw/commitlint-config": "^2.0.0",
 		"@acdh-oeaw/eslint-config": "^2.0.1",
 		"@acdh-oeaw/eslint-config-node": "^2.0.1",
+		"@acdh-oeaw/eslint-config-react": "^2.0.2",
 		"@acdh-oeaw/prettier-config": "^2.0.0",
 		"@acdh-oeaw/tsconfig-lib": "^1.1.1",
 		"@changesets/changelog-github": "^0.5.0",
@@ -51,6 +53,7 @@
 		"@commitlint/cli": "^19.5.0",
 		"@keystatic/core": "^0.5.35",
 		"@types/node": "^22.5.4",
+		"@types/react": "^18.3.5",
 		"eslint": "^9.10.0",
 		"eslint-config-flat-gitignore": "^0.3.0",
 		"globals": "^15.9.0",
@@ -58,6 +61,7 @@
 		"lint-staged": "^15.2.10",
 		"npm-run-all2": "^6.2.2",
 		"prettier": "^3.3.3",
+		"react": "^18.3.1",
 		"simple-git-hooks": "^2.11.1",
 		"tsup": "^8.2.4",
 		"tsx": "^4.19.1",
