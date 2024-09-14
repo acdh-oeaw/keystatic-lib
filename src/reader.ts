@@ -10,17 +10,14 @@ import type { MDXModule } from "mdx/types";
 import type { Locale } from "./config";
 import { withI18nPrefix, type WithoutI18nPrefix } from "./with-i18n-prefix";
 
+type GitHubReaderConfig = Parameters<typeof createGitHubReader>[1];
+
 export function createReader<
 	TCollections extends Record<string, Collection<Record<string, ComponentSchema>, string>>,
 	TSingletons extends Record<string, Singleton<Record<string, ComponentSchema>>>,
 >(
 	config: Config<TCollections, TSingletons>,
-	getGitHubReaderConfig?: () => {
-		repo: `${string}/${string}`;
-		pathPrefix?: string;
-		ref?: string;
-		token?: string;
-	} | null,
+	getGitHubReaderConfig?: () => GitHubReaderConfig | null,
 ) {
 	const gitHubConfig = getGitHubReaderConfig?.();
 
