@@ -5,8 +5,8 @@ import type { Locale } from "./config";
 export function createComponent<
 	TPath extends `/${string}/`,
 	TLocale extends Locale,
-	TComponent extends ContentComponent,
->(createComponentFactory: (assetPath: TPath, locale: TLocale) => TComponent) {
+	TComponents extends Record<string, ContentComponent>,
+>(createComponentFactory: (assetPath: TPath, locale: TLocale) => TComponents) {
 	return function createComponent(assetPath: TPath, locale: TLocale) {
 		return createComponentFactory(assetPath, locale);
 	};
