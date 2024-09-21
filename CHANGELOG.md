@@ -1,5 +1,13 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.3.0
+
+### Minor Changes
+
+- [`0cbfa11`](https://github.com/acdh-oeaw/keystatic-lib/commit/0cbfa1161fda57eadf2bec62bdb4288dc5364117)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - change component factory to return
+  object
+
 ## 0.2.0
 
 ### Minor Changes
