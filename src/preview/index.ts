@@ -8,8 +8,8 @@ interface UseObjectUrlParams {
 
 /** @see https://github.com/Thinkmill/keystatic/blob/main/packages/keystatic/src/form/fields/image/ui.tsx#L48-L63 */
 export function useObjectUrl(params: UseObjectUrlParams | null) {
-	const data = params?.data
-	const contentType = params?.extension === "svg" ? "image/svg+xml" : undefined
+	const data = params?.data;
+	const contentType = params?.extension === "svg" ? "image/svg+xml" : undefined;
 
 	const [url, setUrl] = useState<string | null>(null);
 
