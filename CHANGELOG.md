@@ -1,5 +1,13 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.4.0
+
+### Minor Changes
+
+- [`fa4eef9`](https://github.com/acdh-oeaw/keystatic-lib/commit/fa4eef90186e2762e1a3d4eb662431f09e138655)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - accept image field params in
+  use-object-url
+
 ## 0.3.0
 
 ### Minor Changes
