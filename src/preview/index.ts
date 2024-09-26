@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-interface UseObjectUrlParams {
+export interface UseObjectUrlParams {
 	data: Uint8Array;
 	extension: string;
 	filename: string;
