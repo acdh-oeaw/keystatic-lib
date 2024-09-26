@@ -1,5 +1,12 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.4.1
+
+### Patch Changes
+
+- [`af7f8b5`](https://github.com/acdh-oeaw/keystatic-lib/commit/af7f8b5eec79cdd4b266eaade05239cad42e8f3c)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - export use-object-url type
+
 ## 0.4.0
 
 ### Minor Changes
