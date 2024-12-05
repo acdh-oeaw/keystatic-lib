@@ -4,15 +4,17 @@ import type { Locale } from "./config";
 
 export function createCollectionPaths<TPath extends `/${string}/`>(path: TPath, locale: Locale) {
 	return {
-		assetPath: `/content/${locale}${path}`,
+		assetPath: `/content/assets/${locale}${path}`,
 		contentPath: `./content/${locale}${path}*/`,
+		downloadPath: `/content/downloads/${locale}${path}`,
 	} as const;
 }
 
 export function createSingletonPaths<TPath extends `/${string}/`>(path: TPath, locale: Locale) {
 	return {
-		assetPath: `/content/${locale}${path}`,
+		assetPath: `/content/assets/${locale}${path}`,
 		contentPath: `./content/${locale}${path}`,
+		downloadPath: `/content/downloads/${locale}${path}`,
 	} as const;
 }
 
