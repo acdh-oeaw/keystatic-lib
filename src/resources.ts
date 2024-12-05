@@ -2,7 +2,6 @@ import type { Collection, ComponentSchema, Singleton } from "@keystatic/core";
 
 import type { Locale } from "./config";
 
-/** @private */
 export function createPaths<TPath extends `/${string}/`>(path: TPath, locale: Locale) {
 	return {
 		assetPath: `/content/assets/${locale}${path}`,

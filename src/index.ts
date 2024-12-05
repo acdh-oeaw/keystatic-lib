@@ -8,5 +8,6 @@ export {
 	createCollectionPaths,
 	createSingleton,
 	createSingletonPaths,
+	type Paths,
 } from "./resources";
 export { withI18nPrefix, type WithoutI18nPrefix } from "./with-i18n-prefix";
