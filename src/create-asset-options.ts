@@ -1,11 +1,9 @@
 import slugify from "@sindresorhus/slugify";
 
-import type { Paths } from "./resources";
-
-export function createAssetOptions<TPath extends `/${string}/`>(paths: Paths<TPath>) {
+export function createAssetOptions<TPath extends `/${string}/`>(path: TPath) {
 	return {
-		directory: `./public/assets${paths.assetPath}` as const,
-		publicPath: `/assets${paths.assetPath}` as const,
+		directory: `./public/assets${path}` as const,
+		publicPath: `/assets${path}` as const,
 		transformFilename(originalFilename: string) {
 			return slugify(originalFilename, { preserveCharacters: ["."] });
 		},
