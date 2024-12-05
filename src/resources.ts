@@ -10,7 +10,6 @@ export function createPaths<TPath extends `/${string}/`>(path: TPath, locale: Lo
 	} as const;
 }
 
-/** @private */
 export type Paths<TPath extends `/${string}/`> = ReturnType<typeof createPaths<TPath>>;
 
 export function createCollectionPaths<TPath extends `/${string}/`>(path: TPath, locale: Locale) {
