@@ -1,5 +1,16 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.5.0
+
+### Minor Changes
+
+- [`d437c2e`](https://github.com/acdh-oeaw/keystatic-lib/commit/d437c2e5f4371b5a9d4218a44da1a68497f73a15)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - add download path
+
+- [`2770a12`](https://github.com/acdh-oeaw/keystatic-lib/commit/2770a121edaf024a36cc52308003e48d59143858)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - pass asset and download paths to
+  component factory
+
 ## 0.4.1
 
 ### Patch Changes
