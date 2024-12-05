@@ -30,7 +30,7 @@ declare module "@acdh-oeaw/keystatic-lib" {
 import { createComponent } from "@acdh-oeaw/keystatic-lib";
 import { wrapper } from "@keystatic/core/content-components";
 
-export const Video = createComponent((assetPath, locale) => {
+export const Video = createComponent((paths, locale) => {
 	return wrapper({
 		label: "Video",
 		schema: {
@@ -78,9 +78,9 @@ export const pages = createCollection("/pages/", (paths, locale) => {
 			}),
 			content: fields.mdx({
 				label: "Content",
-				options: createContentFieldOptions(paths.assetPath),
+				options: createContentFieldOptions(paths),
 				components: {
-					Video: Video(paths.assetPath, locale),
+					Video: Video(paths, locale),
 				},
 			}),
 		},
