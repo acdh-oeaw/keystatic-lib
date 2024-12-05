@@ -2,19 +2,28 @@ import type { Collection, ComponentSchema, Singleton } from "@keystatic/core";
 
 import type { Locale } from "./config";
 
-export function createCollectionPaths<TPath extends `/${string}/`>(path: TPath, locale: Locale) {
+/** @private */
+export function createPaths<TPath extends `/${string}/`>(path: TPath, locale: Locale) {
 	return {
 		assetPath: `/content/assets/${locale}${path}`,
-		contentPath: `./content/${locale}${path}*/`,
 		downloadPath: `/content/downloads/${locale}${path}`,
+	} as const;
+}
+
+/** @private */
+export type Paths<TPath extends `/${string}/`> = ReturnType<typeof createPaths<TPath>>;
+
+export function createCollectionPaths<TPath extends `/${string}/`>(path: TPath, locale: Locale) {
+	return {
+		...createPaths(path, locale),
+		contentPath: `./content/${locale}${path}*/`,
 	} as const;
 }
 
 export function createSingletonPaths<TPath extends `/${string}/`>(path: TPath, locale: Locale) {
 	return {
-		assetPath: `/content/assets/${locale}${path}`,
+		...createPaths(path, locale),
 		contentPath: `./content/${locale}${path}`,
-		downloadPath: `/content/downloads/${locale}${path}`,
 	} as const;
 }
 
