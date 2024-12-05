@@ -1,5 +1,12 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.5.2
+
+### Patch Changes
+
+- [`b7698fd`](https://github.com/acdh-oeaw/keystatic-lib/commit/b7698fdf8fcc3fe68e29ebc4768df4a7a7eef460)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - fix paths types
+
 ## 0.5.1
 
 ### Patch Changes
