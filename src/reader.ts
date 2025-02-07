@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
+import { serialize } from "node:v8";
 
 import type { Collection, ComponentSchema, Config, Singleton } from "@keystatic/core";
 import { createReader as createLocalReader } from "@keystatic/core/reader";
@@ -62,10 +64,12 @@ export function createReaders<
 
 		async function read(id: string) {
 			const data = await collectionReader.readOrThrow(id, { resolveLinkedFiles: true });
+			const md5 = createHash("md5").update(serialize(data)).digest("hex");
 
 			return {
 				collection: name,
 				id,
+				md5,
 				data,
 				compile(code: string) {
 					return compile(id, code);
