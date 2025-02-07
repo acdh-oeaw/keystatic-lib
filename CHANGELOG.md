@@ -1,5 +1,12 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.6.0
+
+### Minor Changes
+
+- [`4a07379`](https://github.com/acdh-oeaw/keystatic-lib/commit/4a07379eb7f0b33baf4546c70a8bf1a224ad5645)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - add md5 content-hash to reader result
+
 ## 0.5.3
 
 ### Patch Changes
