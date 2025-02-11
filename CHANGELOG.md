@@ -1,5 +1,12 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.6.1
+
+### Patch Changes
+
+- [`4d3a256`](https://github.com/acdh-oeaw/keystatic-lib/commit/4d3a25653f3f25810120ef21c74195dba12bcdff)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - add md5 content hash to singletons
+
 ## 0.6.0
 
 ### Minor Changes
