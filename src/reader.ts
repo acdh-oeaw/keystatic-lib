@@ -113,9 +113,11 @@ export function createReaders<
 
 		async function read() {
 			const data = await singletonReader.readOrThrow({ resolveLinkedFiles: true });
+			const md5 = createHash("md5").update(serialize(data)).digest("hex");
 
 			return {
 				singleton: name,
+				md5,
 				data,
 				compile,
 			};
