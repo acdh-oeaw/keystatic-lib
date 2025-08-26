@@ -1,5 +1,3 @@
-/* eslint-disable react-x/prefer-read-only-props */
-
 import { TextField } from "@keystar/ui/text-field";
 import type { BasicFormField, FormFieldStoredValue } from "@keystatic/core";
 
