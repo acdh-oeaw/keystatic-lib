@@ -1,5 +1,17 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.7.0
+
+### Minor Changes
+
+- [#16](https://github.com/acdh-oeaw/keystatic-lib/pull/16)
+  [`ff24982`](https://github.com/acdh-oeaw/keystatic-lib/commit/ff24982e9dbbf50a93e9b971c337796e4f994306)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - export readonly field
+
+- [#19](https://github.com/acdh-oeaw/keystatic-lib/pull/19)
+  [`c99546e`](https://github.com/acdh-oeaw/keystatic-lib/commit/c99546ee4006ee69646a4526a4acd307c87d9daf)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - add simple colorpicker field
+
 ## 0.6.1
 
 ### Patch Changes
