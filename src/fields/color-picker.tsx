@@ -1,20 +1,26 @@
 import { TextField } from "@keystar/ui/text-field";
 import type { BasicFormField, FormFieldStoredValue } from "@keystatic/core";
 
-interface ReadonlyFieldProps {
+interface ColorPickerFieldProps {
 	defaultValue?: string;
 	description?: string;
 	label: string;
 }
 
-function ReadonlyField(props: ReadonlyFieldProps): BasicFormField<string> {
+function ColorPickerField(props: ColorPickerFieldProps): BasicFormField<string> {
 	const { defaultValue, description, label } = props;
 
 	return {
 		kind: "form",
 		label,
 		Input(props) {
-			return <TextField {...props} description={description} isReadOnly={true} label={label} />;
+			/**
+			 * For simple usecases, the browser built-in color input should work.
+			 *
+			 * For a better color-picker, consider using
+			 * @see https://react-spectrum.adobe.com/react-aria/ColorPicker.html
+			 */
+			return <TextField {...props} description={description} label={label} type="color" />;
 		},
 		defaultValue() {
 			return defaultValue ?? "";
@@ -50,4 +56,4 @@ function validate(value: string): string {
 	return value;
 }
 
-export const readonly = ReadonlyField;
+export const colorPicker = ColorPickerField;
