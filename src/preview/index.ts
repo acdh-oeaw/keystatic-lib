@@ -20,7 +20,7 @@ export function useObjectUrl(params: UseObjectUrlParams | null) {
 		}
 
 		const url = URL.createObjectURL(
-			new Blob([data], contentType ? { type: contentType } : undefined),
+			new Blob([data as BlobPart], contentType ? { type: contentType } : undefined),
 		);
 		setUrl(url);
 

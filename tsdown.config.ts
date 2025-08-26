@@ -1,14 +1,12 @@
-import { defineConfig } from "tsup";
+import { defineConfig } from "tsdown";
 
 export default defineConfig({
 	clean: true,
 	dts: true,
 	entry: ["./src/**/*.ts", "!./src/**/*.test.ts"],
-	esbuildOptions(options) {
-		options.packages = "external";
-	},
 	format: ["esm"],
 	minify: false,
 	sourcemap: true,
 	treeshake: true,
+	unbundle: true,
 });
