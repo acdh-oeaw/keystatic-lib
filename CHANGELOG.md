@@ -1,5 +1,13 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.7.1
+
+### Patch Changes
+
+- [#20](https://github.com/acdh-oeaw/keystatic-lib/pull/20)
+  [`f5dd98f`](https://github.com/acdh-oeaw/keystatic-lib/commit/f5dd98f570d493247d33c721153c7788cb714d83)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - fix build
+
 ## 0.7.0
 
 ### Minor Changes
