@@ -47,7 +47,8 @@
 	},
 	"peerDependencies": {
 		"@keystar/ui": "0.x",
-		"@keystatic/core": "0.x"
+		"@keystatic/core": "0.x",
+		"react": "19.x"
 	},
 	"devDependencies": {
 		"@acdh-oeaw/commitlint-config": "^2.0.0",
