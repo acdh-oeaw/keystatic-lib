@@ -2,6 +2,9 @@
 	"name": "@acdh-oeaw/keystatic-lib",
 	"version": "0.7.1",
 	"license": "MIT",
+	"repository": {
+		"url": "https://github.com/acdh-oeaw/keystatic-lib"
+	},
 	"type": "module",
 	"engines": {
 		"node": "22.x || 24.x"
