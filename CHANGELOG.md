@@ -1,5 +1,13 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.8.0
+
+### Minor Changes
+
+- [#25](https://github.com/acdh-oeaw/keystatic-lib/pull/25)
+  [`4cdcc73`](https://github.com/acdh-oeaw/keystatic-lib/commit/4cdcc73cdce7e32bae306cb5db67bde978c46cfb)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - add readonly-slug field
+
 ## 0.7.1
 
 ### Patch Changes
