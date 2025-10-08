@@ -17,9 +17,7 @@ function ReadonlySlugField(
 		formKind: "slug",
 		label,
 		Input(props) {
-			return (
-				<TextField {...props} description={description} isReadOnly={true} label={label} />
-			);
+			return <TextField {...props} description={description} isReadOnly={true} label={label} />;
 		},
 		defaultValue() {
 			return defaultValue ?? "";
