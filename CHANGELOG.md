@@ -1,5 +1,13 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.8.1
+
+### Patch Changes
+
+- [#28](https://github.com/acdh-oeaw/keystatic-lib/pull/28)
+  [`15c01e1`](https://github.com/acdh-oeaw/keystatic-lib/commit/15c01e1da4e0f6ec11db366c7dcd9ef70f6e963a)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - support node 26
+
 ## 0.8.0
 
 ### Minor Changes
