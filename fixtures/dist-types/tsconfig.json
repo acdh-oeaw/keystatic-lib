@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"lib": ["dom", "dom.iterable", "es2023"],
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
+		"noEmit": true,
+		"noUncheckedIndexedAccess": true,
+		"rootDir": ".",
+		"skipLibCheck": false,
+		"strict": true,
+		"target": "es2022",
+		"types": ["node"],
+		"verbatimModuleSyntax": true
+	},
+	"include": ["./*.ts"]
+}

@@ -38,10 +38,11 @@
 		"lint:check": "eslint .",
 		"lint:fix": "pnpm run lint:check --fix",
 		"prepare": "run-s setup",
-		"prepublishOnly": "run-s validate build",
+		"prepublishOnly": "run-s validate build types:check:dist",
 		"setup": "is-in-ci || simple-git-hooks",
 		"test": "tsx --test --test-reporter spec",
 		"types:check": "tsc --noEmit",
+		"types:check:dist": "tsx ./scripts/check-dist-types.ts",
 		"validate": "run-s format:check lint:check types:check test"
 	},
 	"dependencies": {
