@@ -7,6 +7,10 @@ import { config } from "typescript-eslint";
 
 export default config(
 	gitignore({ strict: false }),
+	{
+		/** Typechecked against built `dist` declarations by `pnpm run types:check:dist`. */
+		ignores: ["fixtures/dist-types/**"],
+	},
 	base,
 	{
 		ignores: ["src/fields/**", "src/preview/**"],
