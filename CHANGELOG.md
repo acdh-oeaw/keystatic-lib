@@ -1,5 +1,14 @@
 # @acdh-oeaw/keystatic-lib
 
+## 0.8.2
+
+### Patch Changes
+
+- [#32](https://github.com/acdh-oeaw/keystatic-lib/pull/32)
+  [`f8fee38`](https://github.com/acdh-oeaw/keystatic-lib/commit/f8fee383f061bf09360bccb44fbfad2928c74980)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - fix emitted reader type declarations,
+  which referenced undeclared keystatic-internal types and made collection entry `data` untyped
+
 ## 0.8.1
 
 ### Patch Changes
